@@ -4,8 +4,9 @@ const { connection } = require("./db")
 const { userRouter } = require("./Routes/userroutes")
 const { productRouter } = require("./Routes/productroutes")
 require('dotenv').config()
+const cors=require("cors")
 const app=express()
-
+app.use(cors())
 app.use(express.json())
 
 app.use("/user",userRouter)
